@@ -1,12 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void printer(int x, int y, int [x][y]);
-int** label(int x, int y, int [x][y]);
-
-// merge everything to main
-// too many type restrictions
-
 int main(){
     int img[10][10] = {
         {0, 0, 0, 0, 1, 1, 0, 0, 0, 0},
@@ -20,37 +14,44 @@ int main(){
         {0, 0, 0, 0, 0, 1, 0, 0, 0, 0},
         {0, 0, 0, 0, 0, 1, 1, 0, 0, 0}
     };
+    
+    int rows = sizeof(img)/sizeof(img[0]);
+    int cols = sizeof(img[0])/sizeof(img[0][0]);
+    int curr = 2;
+    
+    for (int row = 0; row < rows; row++){
+        for (int col = 0; col < cols; col++){
 
-    // int** postproc = label(sizeof(img)/sizeof(img[0]), sizeof(img[0])/sizeof(img[0][0]), img);
-    printer(sizeof(img)/sizeof(img[0]), sizeof(img[0])/sizeof(img[0][0]), img);
+            if (col && row && img[row][col]){
+            
+                if (!img[row - 1][col] && !img[row][col - 1]){
+                    img[row][col] = curr++;
+                }   
 
-    // common
-    // printer(sizeof(postproc)/sizeof(postproc[0]), sizeof(postproc[0])/sizeof(postproc[0][0]), postproc);
+                else {
+                    img[row][col] = img[row - 1][col] > 0 ? img[row - 1][col] : img[row][col - 1];
+                    img[row][col] = img[row][col - 1] < img[row][col] && img[row][col - 1] ? img[row][col - 1] : img[row][col];
+                }
+            }
+            
+            else if (row == 0 && col > 0 && img[row][col]){
+                img[row][col] = !img[row][col - 1] ? curr++ : img[row][col - 1];
+            }
 
-    // free(postproc);
-    return 0;
-}
+            else if (col == 0 && img[row][col]){
+                img[row][col] = img[row - 1][col] ? img[row - 1][col] : curr++;
+            }
 
-void printer(int h, int w, int arr[h][w]){
-    for (int i = 0; i < h; i++){
-        for (int j = 0; j < w; j++){
-            printf("%i ", arr[i][j]);
+        }
+    }
+
+
+    for (int i = 0; i < rows; i++){
+        for (int j = 0; j < cols; j++){
+            printf("%i ", img[i][j]);
         }
         printf("\n");
     }
-}
 
-int** label(int h, int w, int img[h][w]) {
-    int **out = malloc(h * sizeof(int*));
-
-    for (int i = 0; i < h; i++) {
-        out[i] = malloc(w * sizeof(int));
-    
-        for (int j = 0; j < w; j++) {
-            out[i][j] = img[i][j] + 1;
-        }
-    }
-
-    // FREE ??
-    return out;
+    return 0;
 }
