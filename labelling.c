@@ -44,7 +44,7 @@ int main(){
             
             // if active pixel is in 1st row but not in 1st col
             else if (row == 0 && col > 0 && img[row][col]){
-                img[row][col] = !img[row][col - 1] ? curr++ : img[row][col - 1];
+                img[row][col] = img[row][col - 1] ? img[row][col - 1] : curr++;
             }
 
             // if pixel is in 1st col
