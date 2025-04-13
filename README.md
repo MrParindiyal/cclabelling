@@ -1,15 +1,14 @@
-
-- This project performs *Connected Component Labelling* (CCL) using openCV and numpy. The focus is on understanding the inner workings of image processing algorithms by handling:
+#### This project performs **Connected Component Labelling** (CCL) using openCV and numpy. The focus is on understanding the inner workings of image processing algorithms by handling:
 - Pixel-level iteration
 - Label assignment
-- Equivalence resolution using set() and frozenset()
+- Equivalence resolution using ``set()`` and ``frozenset()`` operations
 
 ---
 
 ##  Features
 
 - Two-pass labelling algorithm
-- Uses set() and frozenset() to track equivalent labels
+- Uses ``set()`` and ``frozenset()`` to track equivalent labels
 - Clean and simple logic flow
 - Easy to extend for visualization or advanced analysis
 
@@ -23,8 +22,14 @@
    - Store equivalences in a set of frozensets
 
 2. *Second Pass*
+
    - Flatten equivalence sets
    - Replace temporary labels with final unique ones
 
-3. *(Optional Extension)*
-   - Assign colors to components
+3. *Third Pass*
+   - Assign different colors to components
+
+
+## Demo
+<img src="./assets/blobs.png" height="150"> &nbsp;&nbsp; <img src="./outputs/blobs_output_AP.png" height="150">
+<p>&nbsp;&nbsp; input image &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; output image</p>
