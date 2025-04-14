@@ -1,0 +1,14 @@
+{% extends "base_temp.html" %}
+
+{% block css %}
+  <link href="../static/labeler.css" rel="stylesheet">
+{% endblock %}
+
+{% block main %}
+  <div class="container-upload">
+    <img src="../images/{{ filename }}" height="400px">
+  </div>
+  <div class="container-download">
+    <img src="../images/labeled_image.png" height="400px">
+  </div>
+{% endblock %}

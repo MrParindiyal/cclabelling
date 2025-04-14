@@ -1,0 +1,15 @@
+main {
+  justify-content: center;
+  gap: 40px;
+}
+
+.container-upload, .container-download {
+  background-color: var(--periwinkle);
+  display: flex;
+  flex-flow: column;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+}
+
+
