@@ -10,6 +10,7 @@ document.addEventListener('dragover', (ev) => {
   ev.preventDefault();
 })
 
+// drop box events
 const drop_box = document.querySelector('.drop_zone');
 drop_box.addEventListener('drop', dropHandler);
 drop_box.addEventListener('dragover', dragOverHandler);
@@ -62,4 +63,28 @@ function lightMode(targetElement) {
 function darkMode(targetElement) {
   targetElement.style.backgroundColor = richBlack;
   targetElement.style.color = 'white';
+}
+
+// file upload events
+const input = document.querySelector("input");
+const preview = document.querySelector(".preview");
+input.addEventListener("change", updateImageDisplay);
+
+function updateImageDisplay() {
+  const curFiles = input.files;
+  if (curFiles.length === 0) {
+    preview.textContent = "No files currently selected for upload";
+  } else {
+    preview.textContent = `File name ${curFiles[0].name}, file size ${returnFileSize(curFiles[0].size)}.`;
+  }
+}
+
+function returnFileSize(number) {
+  if (number < 1e3) {
+    return `${number} bytes`;
+  } else if (number >= 1e3 && number < 1e6) {
+    return `${(number / 1e3).toFixed(1)} KB`;
+  } else {
+    return `${(number / 1e6).toFixed(1)} MB`;
+  }
 }

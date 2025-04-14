@@ -58,10 +58,52 @@ main {
 .container-upload, .container-download {
   flex-direction: column;
 }
-
 .upload {
   color: white;
   background-color: var(--rich-black);
   height: 50px;
-  margin-bottom: auto;
+}
+
+/* form styling */
+form {
+  background: #F3E7B7;
+  padding: 20px;
+  border: 1px solid black;
+}
+
+div .preview {
+  background: white;
+  margin: 10px 0px 10px;
+  /* border: 1px solid black; */
+}
+
+form p {
+  line-height: 32px;
+  padding-left: 10px;
+}
+
+form label,
+form button {
+  background-color: var(--periwinkle);
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 1px ridge black;
+  font-size: 0.8rem;
+  height: auto;
+}
+
+form label:hover,
+form button:hover {
+  background-color: #2d5ba3;
+  color: white;
+}
+
+form label:active,
+form button:active {
+  background-color: #0d3f8f;
+  color: white;
+}
+
+input {
+  opacity: 0;
 }

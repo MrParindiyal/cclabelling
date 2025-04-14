@@ -12,7 +12,29 @@
   <main>
     <div class="container-upload">
       <div class="input drop_zone">Drop a File</div>
-      <button class="upload">Upload an image</button>
+      <!-- <button class="upload">Upload an image</button> -->
+      <!-- <form method=post enctype=multipart/form-data>
+        <input type=file name=file>
+        <input type=submit value=Upload class="upload">
+      </form> -->
+      <form method="post" enctype="multipart/form-data">
+        <div>
+          <label for="image_uploads">Choose image to upload (PNG, JPG)</label>
+            <input
+              type="file"
+              id="image_uploads"
+              name="image_uploads"
+              accept=".jpg, .jpeg, .png"
+              multiple />
+        </div>
+        <div class="preview">
+          <p>No files currently selected for upload</p>
+        </div>
+        <div>
+          <button>Submit</button>
+        </div>
+      </form>
+      
     </div>
     <div class="container-download">
       <div class="output">Output Image</div>
