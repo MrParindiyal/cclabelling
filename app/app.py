@@ -3,6 +3,7 @@ from flask import Flask, flash, redirect, render_template, request, session, url
 from werkzeug.utils import secure_filename
 from static.helpers import allowed_file
 from static import algo
+from static import pipeline
 
 UPLOAD_FOLDER = './images'
 ALLOWED_EXTENSIONS = {'jpg', 'png'} 
@@ -34,7 +35,8 @@ def index():
       file.save(og_img)
       path = f'./images/{filename}'
       output_path = os.path.join(app.config['UPLOAD_FOLDER'], 'labeled_image.png')
-      algo.cclabeling(path, output_path)
+      # algo.cclabeling(path, output_path)
+      pipeline.labeller(path, output_path)
       return redirect(url_for('labeling', filename=filename))
   return render_template("index.html")
 
