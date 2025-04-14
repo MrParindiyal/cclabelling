@@ -33,3 +33,20 @@
 ## Demo
 <img src="./assets/blobs.png" height="150"> &nbsp;&nbsp; <img src="./outputs/blobs_output_AP.png" height="150">
 <p>&nbsp;&nbsp; input image &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; output image</p>
+
+## How to run with frontend
+- Install necessary libraries using pip
+
+   `pip install -r requirements.txt`
+
+- Go to app directory
+
+   `cd app`
+
+- Run the flask app
+
+   `flask --app app.py run`
+
+- For debugging run 
+   
+   `flask --app app.py run --debug`
