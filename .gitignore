@@ -2,3 +2,5 @@ __pycache__
 test_app/app.py
 test_app/pixel_art.png
 app/images
+
+test/
