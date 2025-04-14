@@ -5,7 +5,7 @@ from matplotlib import pyplot as plt
 import matplotlib as mpl
 import distinctipy
 
-def cclabeling(path):
+def cclabeling(path, output_path):
   # Read image
   img = cv.imread(path)
   # Convert it to grayscale image
@@ -100,10 +100,5 @@ def cclabeling(path):
   # convert the float values to standard 8-bit values
   thresh = (np.array(thresh) * 255).astype(np.uint8)
   
-  # show the original and final image
-  og_image_path = '../images/og_image.jpg'
-  labeled_image_path = '../images/labeled_image.jpg'
-  plt.imsave(og_image_path , img)
-  plt.imsave(labeled_image_path, thresh)
-
-  return [og_image_path, labeled_image_path]
+  # show final image
+  plt.imsave(output_path, thresh)
