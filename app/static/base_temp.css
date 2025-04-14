@@ -22,15 +22,28 @@ body {
   min-height: 100vh;
 }
 
-header, footer {
-  display: flex;
-  height: 70px;
-  background-color: var(--rich-black);
-  color: white;
-}
-
 main {
   padding: 20px;
   display: flex;
   flex: 1;
+}
+
+header, footer {
+  display: flex;
+  height: 60px;
+  background-color: var(--rich-black);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  padding: 12px;
+}
+
+header{
+  font-size: 1.5rem;
+  color: white;
+}
+
+footer{
+  font-size: 1rem;
+  color: rgb(148, 148, 148);
+  align-items: center;
+  justify-content: center;
 }

@@ -8,14 +8,17 @@ main {
   flex: 1;
   flex-direction: column;
   gap: 20px;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bolder;
 }
 
 .input{
-  height: 80%;
+  height: 50%;
   background-color: var(--periwinkle);
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 3rem;
 }
 
 /* form styling */
@@ -23,6 +26,7 @@ form {
   background: #F3E7B7;
   padding: 20px;
   border: 1px solid black;
+  font-size: 1.5rem;
 }
 
 div .preview {
@@ -42,7 +46,9 @@ form button {
   padding: 5px 10px;
   border-radius: 5px;
   border: 1px ridge black;
-  font-size: 0.8rem;
+  font-size: 1.2rem;
+  font-weight:bold;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   height: auto;
 }
 
@@ -60,4 +66,8 @@ form button:active {
 
 input {
   opacity: 0;
+}
+
+.preview{
+  width: 80%;
 }
