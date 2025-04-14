@@ -9,6 +9,10 @@ ALLOWED_EXTENSIONS = {'jpg', 'png'}
 
 
 app = Flask(__name__)
+curr_dir = app.root_path
+final_directory = os.path.join(curr_dir, 'images')
+if not os.path.exists(final_directory):
+   os.makedirs(final_directory)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 @app.route("/", methods=['GET', 'POST'])
