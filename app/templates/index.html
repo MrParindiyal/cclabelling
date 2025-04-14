@@ -1,45 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Component Labeling</title>
-  <script src="../static/index.js" defer></script>
+{% extends "base_temp.html" %}
+
+{% block css %}
   <link href="../static/index.css" rel="stylesheet">
-</head>
-<body>
-  <header>Component Labeler</header>
-  <main>
-    <div class="container-upload">
-      <div class="input drop_zone">Drop a File</div>
-      <!-- <button class="upload">Upload an image</button> -->
-      <!-- <form method=post enctype=multipart/form-data>
-        <input type=file name=file>
-        <input type=submit value=Upload class="upload">
-      </form> -->
-      <form method="post" enctype="multipart/form-data">
-        <div>
-          <label for="image_uploads">Choose image to upload (PNG, JPG)</label>
-            <input
-              type="file"
-              id="image_uploads"
-              name="image_uploads"
-              accept=".jpg, .jpeg, .png"
-              multiple />
-        </div>
-        <div class="preview">
-          <p>No files currently selected for upload</p>
-        </div>
-        <div>
-          <button>Submit</button>
-        </div>
-      </form>
-      
-    </div>
-    <div class="container-download">
-      <div class="output">Output Image</div>
-    </div>
-  </main>
-  <footer></footer>
-</body>
-</html>
+{% endblock %}
+{% block js %}
+  <script src="../static/index.js" defer></script>
+{% endblock %}
+
+{% block main %}
+  <div class="container-upload">
+    <div class="input drop_zone">Drop a File</div>
+    <!-- <button class="upload">Upload an image</button> -->
+    <!-- <form method=post enctype=multipart/form-data>
+      <input type=file name=file>
+      <input type=submit value=Upload class="upload">
+    </form> -->
+    <form method="post" enctype="multipart/form-data">
+      <div>
+        <label for="image_uploads">Choose image to upload (PNG, JPG)</label>
+          <input
+            type="file"
+            id="image_uploads"
+            name="file"
+            accept=".jpg, .jpeg, .png"
+            multiple />
+      </div>
+      <div class="preview">
+        <p>No files currently selected for upload</p>
+      </div>
+      <div>
+        <button>Submit</button>
+      </div>
+    </form>
+    
+  </div>
+  <div class="container-download">
+    <div class="output">Output Image</div>
+  </div>
+{% endblock %}

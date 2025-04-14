@@ -1,43 +1,7 @@
-:root {
-  --rich-black: #011627;
-  --periwinkle: #B7C3F3;
-}
-
-html {
-  box-sizing: border-box;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-}
-
-*, *:before, *:after {
-  box-sizing: inherit;
-}
-
-body {
-  display: flex;
-  flex-flow: column;
-  min-height: 100vh;
-}
-
-header, footer {
-  display: flex;
-  height: 70px;
-  background-color: var(--rich-black);
-  color: white;
-}
-
 main {
-  padding: 20px;
-  display: flex;
-  flex: 1;
-  /* align-items: center; */
   justify-content: center;
   gap: 40px;
 }
-
 .container-upload, .container-download {
   display: flex;
   flex: 1;
