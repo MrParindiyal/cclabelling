@@ -2,30 +2,20 @@ main {
   justify-content: center;
   gap: 40px;
 }
-.container-upload, .container-download {
+.container-upload{
+  max-width: 800px;
   display: flex;
   flex: 1;
+  flex-direction: column;
+  gap: 20px;
 }
 
-.input, .output {
+.input{
   height: 80%;
   background-color: var(--periwinkle);
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.container-upload {
-  gap: 10px;
-}
-
-.container-upload, .container-download {
-  flex-direction: column;
-}
-.upload {
-  color: white;
-  background-color: var(--rich-black);
-  height: 50px;
 }
 
 /* form styling */

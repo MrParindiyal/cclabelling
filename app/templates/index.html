@@ -10,11 +10,6 @@
 {% block main %}
   <div class="container-upload">
     <div class="input drop_zone">Drop a File</div>
-    <!-- <button class="upload">Upload an image</button> -->
-    <!-- <form method=post enctype=multipart/form-data>
-      <input type=file name=file>
-      <input type=submit value=Upload class="upload">
-    </form> -->
     <form method="post" enctype="multipart/form-data">
       <div>
         <label for="image_uploads">Choose image to upload (PNG, JPG)</label>
@@ -33,8 +28,5 @@
       </div>
     </form>
     
-  </div>
-  <div class="container-download">
-    <div class="output">Output Image</div>
   </div>
 {% endblock %}
