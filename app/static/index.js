@@ -67,15 +67,17 @@ function darkMode(targetElement) {
 
 // file upload events
 const input = document.querySelector("input");
-const preview = document.querySelector(".preview");
+const input_name = document.querySelector(".input-file-name");
+const input_size = document.querySelector(".input-file-size");
 input.addEventListener("change", updateImageDisplay);
 
 function updateImageDisplay() {
   const curFiles = input.files;
   if (curFiles.length === 0) {
-    preview.textContent = "No files currently selected for upload";
+    input_name.textContent = "No files currently selected for upload";
   } else {
-    preview.textContent = `File name ${curFiles[0].name}, file size ${returnFileSize(curFiles[0].size)}.`;
+    input_name.textContent = `File name: ${curFiles[0].name}`;
+    input_size.textContent = `File size: ${returnFileSize(curFiles[0].size)}`;
   }
 }
 
