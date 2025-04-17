@@ -17,6 +17,40 @@ def labeller(input_path, output_path):
     # confusions in the labelling matrix, as active pixels are also using 1 initially
     curr_label = 2
 
+# ===============================================
+
+    # def greyscale(image):
+    #     img2 = image.copy()
+    #     for row in range(img2.shape[0]):
+    #         for col in range(img2.shape[1]):
+    #             if min(img2[row][col].sum() / 3, 255) <= 255:
+    #                 img2[row][col] = np.array([(np.uint8(img2[row][col].sum() / 3))] * 3)
+                
+    #             else:
+    #                 img2[row][col] = np.array([(np.uint8(255))] * 3)
+
+    #     return img2
+
+
+    # def binarizer(image0, threshold):
+    #     image = image0.copy()
+    #     for r in range(image.shape[0]):
+    #         for c in range(image.shape[1]):
+    #             if image[r][c][0] <= threshold:
+    #                 image[r][c] = np.array([np.uint8(0)] * 3)
+                
+    #             else:
+    #                 image[r][c] = np.array([np.uint8(255)] * 3)
+
+    #     return image
+
+
+    # img_greyed = greyscale(img)
+    # img_bin = binarizer(img_greyed, threshold = 128)
+    # img = img_bin.copy()
+
+# ===============================================
+
     # A label matrix for image. The background is initialized as 0s and any white pixel is
     # marked as 1. To check if a pixel is white we check any of its BRG channel. Since we started
     # a binary image in the first place, a pixel can either be [0, 0, 0] or [255, 255, 255]
