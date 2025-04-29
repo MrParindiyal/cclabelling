@@ -1,0 +1,23 @@
+{% extends "base_temp.html" %}
+
+{% block css %}
+  <link href="../static/index.css" rel="stylesheet">
+{% endblock %}
+{% block js %}
+  <script src="../static/index.js" defer></script>
+{% endblock %}
+
+{% block main %}
+<div class="operation-choice">
+  <form method="post">
+    <div>
+      <div>
+      <button name="type-of-op" value="grey">Greyscaling</button>
+      <button name="type-of-op" value="thresh">Thresholding/Binary</button>
+      <button name="type-of-op" value="edge1">Edge detection (basic)</button>
+      <button name="type-of-op" value="ccl">CCLabelling</button>
+    </div>
+  </form>
+  
+</div>
+{% endblock %}

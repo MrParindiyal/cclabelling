@@ -1,0 +1,16 @@
+{% extends "base_temp.html" %}
+
+{% block css %}
+  <link href="../static/index.css" rel="stylesheet">
+{% endblock %}
+{% block js %}
+  <script src="../static/index.js" defer></script>
+{% endblock %}
+
+{% block main %}
+<div class="operation-choice">
+
+  <div>You chose : {{ choice }}</div>
+  
+</div>
+{% endblock %}
