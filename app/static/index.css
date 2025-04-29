@@ -4,7 +4,6 @@ main {
 }
 
 .container-upload{
-  max-width: 800px;
   display: flex;
   flex: 7;
   flex-direction: column;

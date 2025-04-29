@@ -12,34 +12,44 @@ document.addEventListener('dragover', (ev) => {
 
 // drop box events
 const drop_box = document.querySelector('.drop_zone');
-drop_box.addEventListener('drop', dropHandler);
+drop_box.addEventListener('drop', dropHandler, false);
 drop_box.addEventListener('dragover', dragOverHandler);
 drop_box.addEventListener('dragleave', dragLeaveHandler); 
 
 
-function dropHandler(ev) {
+function dropHandler(e) {
   console.log("File(s) dropped");
   lightMode(drop_box);
 
   // Prevent default behavior (Prevent file from being opened)
-  ev.preventDefault();
+  e.preventDefault();
 
-  if (ev.dataTransfer.items) {
-    // Use DataTransferItemList interface to access the file(s)
-    [...ev.dataTransfer.items].forEach((item, i) => {
-      // If dropped items aren't files, reject them
-      if (item.kind === "file") {
-        const file = item.getAsFile();
-        // console.log(`file[${i}].name = ${file.name}`);
-      }
-    });
-  } else {
-    // Use DataTransfer interface to access the file(s)
-    [...ev.dataTransfer.files].forEach((file, i) => {
-      console.log(`… file[${i}].name = ${file.name}`);
-    });
+  let dt = e.dataTransfer;
+  let files = dt.files;
+  if (files.length) {
+    uploadFile(files[0]);
   }
 };
+
+function uploadFile(file) {
+  let formData = new FormData();
+  formData.append('file', file);
+
+  fetch('/', {
+    method: 'POST',
+    body: formData
+  })
+  .then(response => {
+    if (response.redirected) {
+      window.location.href = response.url;  // Redirect to the labeling page
+    } else {
+      alert('Upload failed.');
+    }
+  })
+  .catch(() => {
+    alert('Upload failed.');
+  });
+}
 
 function dragOverHandler(ev) {
   console.log("File(s) in drop zone");

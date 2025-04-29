@@ -8,8 +8,30 @@
 {% endblock %}
 
 {% block main %}
-  <div class="container-upload">
-    <div class="input drop_zone">Drop a File</div>
+<div class="container-upload">
+  <div class="input drop_zone">Drop a File</div>
+  <form method="post" enctype="multipart/form-data">
+    <div>
+      <label for="image_uploads">Choose image to upload (PNG, JPG)</label>
+      <input
+      type="file"
+      id="image_uploads"
+      name="file"
+      accept=".jpg, .jpeg, .png"
+      multiple />
+    </div>
+    <div class="preview input-file-name">
+      <p>No files currently selected for upload</p>
+    </div>
+    <div class="preview input-file-size">
+      <p></p>
+    </div>
+    <div>
+      <button>Submit</button>
+    </div>
+  </form>
+  
+</div>
 <div class="definition">
   <h2>What is Connected Component Labelling?</h2>
   <p>
