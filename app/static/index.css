@@ -2,10 +2,11 @@ main {
   justify-content: center;
   gap: 40px;
 }
+
 .container-upload{
   max-width: 800px;
   display: flex;
-  flex: 1;
+  flex: 7;
   flex-direction: column;
   gap: 20px;
   font-family: 'Courier New', Courier, monospace;
@@ -70,4 +71,24 @@ input {
 
 .preview{
   width: 80%;
+}
+
+.definition {
+  height: 80vh;
+  overflow: scroll;
+  padding: 10px;
+  display: flex;
+  flex-flow: column;
+  gap: 10px;
+  flex: 10;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.example {
+  display: flex;
+}
+
+.example img {
+  height: 220px;
 }
