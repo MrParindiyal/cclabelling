@@ -19,6 +19,15 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 @app.route("/", methods=['GET', 'POST'])
 def index():
   if request.method == 'POST':
+    if not request.form.get("type-of-op"):
+      return redirect(request.url)
+    operation = request.form.get("type-of-op")
+    return render_template("method.html", choice = operation)
+  return render_template("choose.html")
+
+@app.route("/alpha", methods=['GET', 'POST'])
+def indexv2():
+  if request.method == 'POST':
     # check if the post request has the file part
     if 'file' not in request.files:
       flash('No file part')
@@ -39,6 +48,7 @@ def index():
       pipeline.labeller(path, output_path)
       return redirect(url_for('labeling', filename=filename))
   return render_template("index.html")
+
 
 @app.route('/labeling')
 def labeling():
